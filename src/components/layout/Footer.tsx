@@ -1,19 +1,16 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export function Footer() {
-  const [email, setEmail] = useState('')
-
   return (
     <footer className="border-t bg-gray-100">
       {/* Main */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           {/* Col 1 — Logo + App */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col items-start gap-5">
             <Image
               src="/logo.png"
               alt="Brothers Outlet"
@@ -107,16 +104,7 @@ export function Footer() {
                   Ajuda
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Venda conosco
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Seja afiliado
-                </Link>
-              </li>
+
               <li>
                 <Link href="/admin/dashboard" className="hover:text-gray-900">
                   Painel admin
@@ -139,12 +127,6 @@ export function Footer() {
             </Link>
             <Link href="#" className="hover:text-white">
               Termos
-            </Link>
-            <Link href="#" className="hover:text-white">
-              Preços
-            </Link>
-            <Link href="#" className="hover:text-white">
-              Não vender meus dados
             </Link>
           </div>
         </div>
