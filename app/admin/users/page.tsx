@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { mockUsers } from '@/mock/users'
 import { formatDate } from '@/utils/formatDate'
+import { MobileMenuButton } from '@/components/layout/MobileMenuButton'
 
 export const metadata: Metadata = { title: 'Usuários' }
 
@@ -10,7 +11,10 @@ export default function AdminUsersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Usuários</h1>
+        <div className="flex items-center">
+          <MobileMenuButton />
+          <h1 className="text-2xl font-bold">Usuários</h1>
+        </div>
         <p className="text-muted-foreground">{mockUsers.length} usuário(s) cadastrado(s)</p>
       </div>
 

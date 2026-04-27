@@ -42,4 +42,12 @@ export const ordersService = {
     mockOrders.push(newOrder)
     return newOrder
   },
+
+  async updateOrderStatus(id: string, status: Order['status']): Promise<Order> {
+    await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
+    const idx = mockOrders.findIndex((o) => o.id === id)
+    if (idx === -1) throw new Error('Pedido não encontrado')
+    mockOrders[idx] = { ...mockOrders[idx], status, updatedAt: new Date().toISOString() }
+    return mockOrders[idx]
+  },
 }
